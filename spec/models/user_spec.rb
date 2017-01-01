@@ -15,6 +15,12 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  last_seen_at           :datetime
+#  first_name             :string(255)
+#  last_name              :string(255)
+#  patronymic             :string(255)
+#  phone                  :string(255)
+#  active                 :boolean
 #
 
 require 'rails_helper'
