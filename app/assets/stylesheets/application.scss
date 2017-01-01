@@ -1,2 +1,18 @@
 @import "bootstrap";
 @import "*";
+
+html, html body.modern {
+    height: 100%;
+}
+
+body.modern > div.bg {
+    background: #f3f3f3 url(bg_grey.png) repeat;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto -50px;
+}
+body > div.bg {
+    width: 100%;
+}
