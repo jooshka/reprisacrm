@@ -1,0 +1,260 @@
+$color_top_bg:              #2e3438;
+$color_top:                 #57646c;
+$color_bg:                  #ef5e67;
+$color_bg_active:           #fa6d76;
+$color_admin_bg:            #1f4962;
+$color_admin_bg_active:     #2a526a;
+$color_analytics_bg:        #3a4247;
+$color_analytics_bg_active: #363d42;
+
+#head-top {
+  height: 28px;
+  line-height: 28px;
+  color: $color_top;
+  font-size: 11px;
+  background-color: $color_top_bg;
+  .container {
+    height: 100%;
+    #head-top-date {
+      float: left;
+      font-size: 14px;
+      list-style: none;
+      line-height: 16px;
+      height: 100%;
+      position: relative;
+      bottom: -1px;
+      white-space: nowrap;
+      .zones {
+        display: inline-block;
+        padding: 4px 0 0 0;
+        vertical-align: middle;
+        a {
+          display: block;
+          float: left;
+          width: 20px;
+          height: 24px;
+          padding: 0px;
+          padding-top: 1px;
+          margin: 0 6px 0 0;
+          -webkit-border-radius: 2px 2px 0px 0px;
+          -moz-border-radius: 2px 2px 0px 0px;
+          border-radius: 2px 2px 0px 0px;
+          text-align: center;
+          &.active {
+            background-color: $color_bg;
+            color: #fff;
+          }
+          &:hover {
+            color: $color_bg;
+          }
+        }
+      }
+      .zones_text {
+        display: inline-block;
+        vertical-align: middle;
+        color: #535c61;
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        margin-left: 4px;
+      }
+    }
+    #head-top-menu {
+      height: 100%;
+      float: right;
+      line-height: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        height: 100%;
+        float: left;
+        border-right: 1px solid #3b4449;
+        padding: 5px 15px;
+        .status-text {
+          position: relative;
+          display: inline-block;
+          text-transform: lowercase;
+          line-height: 1;
+          &.free {
+            color: #95d042;
+          }
+        }
+        .status-icon {
+          font-size: 0.6em;
+          &.free {
+            color: #95d042;
+          }
+        }
+      }
+    }
+  }
+}
+
+.admin #head-top .container #head-top-date .zones a.active {
+  background-color: $color_admin_bg;
+}
+
+.analytics #head-top .container #head-top-date .zones a.active {
+  background-color: $color_analytics_bg;
+}
+
+#head-menu {
+  height: 74px;
+  overflow: hidden;
+  position: relative;
+  clear: both;
+  background-color: $color_bg;
+  .container {
+    height: 100%;
+    position: relative;
+    ul {
+      height: 100%;
+      list-style: none;
+      float: right;
+      li {
+        height: 100%;
+        float: left;
+        border-left: 1px solid transparent;
+        border-right: 1px solid rgba(255,255,255,0.1);
+        position: relative;
+        z-index: 0;
+        &:first-child {
+          border-left-color: rgba(255,255,255,0.1);
+        }
+        &:hover {
+          background-color: #fa6d76;
+          z-index: 1;
+        }
+        &.active {
+          background-color: $color_bg_active;
+          z-index: 1;
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            margin-left: -4px;
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 0 5px 6px 5px;
+            border-color: transparent transparent #f1f1f1 transparent;
+            z-index: 1;
+          }
+        }
+        span {
+          height: 100%;
+          a {
+            height: 100%;
+            i {
+              font-size: 28px;
+              padding-top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.admin #head-menu {
+  background-color: $color_admin_bg;
+  ul li:hover, ul li.active {
+    background-color: $color_admin_bg_active;
+  }
+}
+
+.analytics #head-menu {
+  background-color: $color_analytics_bg;
+  ul li:hover, ul li.active {
+    background-color: $color_analytics_bg_active;
+  }
+}
+
+#head-menu ul > li > span > a, #head-menu ul > li > span > span {
+  padding: 2px 10px 6px;
+  display: block;
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  text-align: center;
+  min-width: 90px;
+}
+
+.sub-nav-top {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e5e5e5;
+  ul.m-tabs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 0;
+    line-height: 0;
+    margin-bottom: -1px;
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 12px;
+      line-height: 18px;
+      &.active {
+        a {
+          color: inherit;
+        }
+      }
+      a {
+        text-decoration: none;
+      }
+      span {
+          padding-top: 11px;
+          padding-bottom: 11px;
+          margin-left: 7px;
+          margin-right: 7px;
+          display: block;
+          &:hover {
+            color: $color_bg;
+          }
+      }
+    }
+  }
+}
+
+.sub-nav-top ul.m-tabs > li.active span,
+.sub-nav-top ul.m-tabs > li:hover span,
+.sub-nav-top ul.m-tabs > li:focus span {
+    border-bottom: 1px solid $color_bg;
+    padding-bottom: 10px;
+}
+
+#logo {
+  height: 100%;
+  position: absolute;
+  color: #fff;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0 auto 9px;
+  width: 186px;
+  height: 38px;
+  a {
+    display: block;
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    -o-background-size: contain;
+    -ms-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain;
+    width: 186px;
+    height: 38px;
+    //text-indent: -1000px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    //background-image: url(logo.png);
+    text-decoration: none;
+    font-size: 28px;
+    color: #fff;
+    font-weight: bold;
+  }
+}

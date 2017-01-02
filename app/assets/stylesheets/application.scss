@@ -1,18 +1,37 @@
 @import "bootstrap";
+@import "font-awesome";
 @import "*";
 
-html, html body.modern {
-    height: 100%;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body.modern > div.bg {
-    background: #f3f3f3 url(bg_grey.png) repeat;
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    overflow: hidden;
-    margin: 0 auto -50px;
+.cleared:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
-body > div.bg {
-    width: 100%;
+
+a, a:hover {
+  color: #3e89b6;
+  text-decoration: none;
+}
+
+html {
+  height: 100%;
+  body.modern {
+    height: 100%;
+    div.bg {
+      height: 100%;
+      width: 100%;
+      background: #f3f3f3 url(bg_grey.png) repeat;
+      min-height: 100%;
+      height: auto !important;
+      overflow: hidden;
+      margin: 0 auto -50px;
+    }
+  }
 }

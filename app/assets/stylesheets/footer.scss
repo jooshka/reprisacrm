@@ -1,0 +1,19 @@
+footer {
+  height: 49px;
+  line-height: 49px;
+  color: #b2b2b2;
+  font-size: 11px;
+  padding: 0;
+  clear: both;
+  background: #f6f6f6;
+  .container {
+    div {
+      border-top: 1px solid #e5e5e5;
+    }
+  }
+  .creator {
+    color: #b2b2b2;
+    float: right;
+    display: inline-block;
+  }
+}

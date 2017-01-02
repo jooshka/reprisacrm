@@ -1,0 +1,48 @@
+- nd = nav_data
+div class="#{nd[:active][0]}"
+  div id='head'
+    div id='head-top'
+      .container
+        div id='head-top-date'
+          span.zones.cleared
+            - nd[:nav].each do |item,v|
+              - if v[:enable]
+                = link_to v[:path], class: (item==nd[:active][0] ? 'active':'') do
+                  = fa_icon v[:icon]
+          span.zones_text= nd[:nav][nd[:active][0]][:title]
+        ul id='head-top-menu'
+          li.dropdown
+            = link_to '#' do
+              = current_user.email
+            endcurrent_user.email
+            '
+            span.status-text.free
+              | свободен
+            '
+            span.status-icon.free
+              = fa_icon 'circle'
+    div id='head-menu'
+      .container
+        div id='logo'
+          =link_to users_path do
+            | reprisaCRM
+          end
+        ul
+          - nd[:nav][nd[:active][0]].each do |item,v|
+            - if v.is_a? Hash
+              - if v[:enable]
+                li class=(item==nd[:active][1] ? 'active':'')
+                  span
+                    =link_to v[:path] do
+                      = fa_icon v[:icon]
+                      br
+                      = v[:title]
+    nav.sub-nav-top
+      .container
+        ul.m-tabs.cleared id='m-tabs'
+          - nd[:nav][nd[:active][0]][nd[:active][1]].each do |item,v|
+            - if v.is_a? Hash
+              - if v[:enable]
+                li class=(item==nd[:active][2] ? 'active':'')
+                  = link_to v[:path], id: "tab-#{nav_data[:active[2]]}" do
+                    span= v[:title]
